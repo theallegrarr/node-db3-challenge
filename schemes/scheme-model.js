@@ -1,7 +1,7 @@
 module.exports = {
   find,
   findById,
-  // findSteps,
+  findSteps,
   // add,
   // update,
   // remove
@@ -15,5 +15,10 @@ function find() {
 
 function findById(id) {
   return db('schemes')
+    .where({ id: id});
+}
+
+function findSteps(id) {
+  return db('steps')
     .where({ id: id});
 }
