@@ -1,6 +1,6 @@
 module.exports = {
   find,
-  // findById,
+  findById,
   // findSteps,
   // add,
   // update,
@@ -11,4 +11,9 @@ const db = require('../data/db-config.js');
 
 function find() {
   return db('schemes');
+}
+
+function findById(id) {
+  return db('schemes')
+    .where({ id: id});
 }
