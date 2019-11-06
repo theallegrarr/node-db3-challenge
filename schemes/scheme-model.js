@@ -27,3 +27,9 @@ function add(scheme) {
   return db('schemes')
           .insert(scheme);
 }
+
+function update(scheme, id) {
+  return db('schemes')
+          .update(scheme)
+          .where({ id: id});
+}
