@@ -3,8 +3,8 @@ module.exports = {
   findById,
   findSteps,
   add,
-  // update,
-  // remove
+  update,
+  remove
 }
 
 const db = require('../data/db-config.js');
@@ -33,3 +33,10 @@ function update(scheme, id) {
           .update(scheme)
           .where({ id: id});
 }
+
+function remove(id) {
+  return db('schemes')
+          .remove()
+          .where({ id: id});
+}
+
